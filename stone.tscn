@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2iuarlp3jeld"]
+
+[ext_resource type="Texture2D" uid="uid://c2ldl0yhhktf2" path="res://icon.svg" id="1_6s6ed"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wijl4"]
+
+[node name="stone" type="RigidBody2D"]
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wijl4")
+
+[node name="collision_shape_2d2" type="CollisionShape2D" parent="."]
+rotation = 2.0944
+shape = SubResource("RectangleShape2D_wijl4")
+
+[node name="collision_shape_2d3" type="CollisionShape2D" parent="."]
+rotation = 4.18879
+shape = SubResource("RectangleShape2D_wijl4")
+
+[node name="sprite_2d2" type="Sprite2D" parent="."]
+rotation = 2.0944
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("1_6s6ed")
+
+[node name="sprite_2d3" type="Sprite2D" parent="."]
+rotation = -2.09439
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("1_6s6ed")
+
+[node name="sprite_2d" type="Sprite2D" parent="."]
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("1_6s6ed")

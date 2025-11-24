@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw0wy7m4c8bxb"]
+
+[ext_resource type="Texture2D" uid="uid://bcwilt4km1v8q" path="res://turtle/Background Island Def1.png" id="1_urblq"]
+[ext_resource type="PackedScene" uid="uid://coj6as6p4ue2u" path="res://rectangle.tscn" id="1_wijl4"]
+[ext_resource type="Script" uid="uid://dikwacsyfj3o8" path="res://spawn_point.gd" id="2_wijl4"]
+[ext_resource type="PackedScene" uid="uid://d2iuarlp3jeld" path="res://stone.tscn" id="3_e0an3"]
+[ext_resource type="PackedScene" uid="uid://ckyesfuoupxu1" path="res://turtle.tscn" id="4_p5pve"]
+
+[node name="map" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+modulate = Color(0.454902, 0.454902, 0.454902, 0.552941)
+position = Vector2(0, -241)
+texture = ExtResource("1_urblq")
+
+[node name="stone" parent="." instance=ExtResource("3_e0an3")]
+position = Vector2(0, -641)
+
+[node name="stone2" parent="." instance=ExtResource("3_e0an3")]
+position = Vector2(-231, -168)
+
+[node name="turtle" parent="." instance=ExtResource("4_p5pve")]
+position = Vector2(-222, -85)
+rotation = -0.113446
+
+[node name="rock" parent="." instance=ExtResource("1_wijl4")]
+position = Vector2(0, -173.775)
+scale = Vector2(10, 19.36)
+
+[node name="ground" parent="." instance=ExtResource("1_wijl4")]
+position = Vector2(0, 10)
+scale = Vector2(50, 1)
+
+[node name="spawn_1_1" type="Marker2D" parent="."]
+position = Vector2(-223, -85)
+rotation = -0.117034
+script = ExtResource("2_wijl4")
+
+[node name="spawn_1_2" type="Marker2D" parent="."]
+position = Vector2(-343, -85)
+rotation = -0.117034
+script = ExtResource("2_wijl4")
+
+[node name="spawn_2_2" type="Marker2D" parent="."]
+position = Vector2(343, -85)
+rotation = 0.116937
+script = ExtResource("2_wijl4")
+flipped = true
+
+[node name="spawn_1_3" type="Marker2D" parent="."]
+position = Vector2(-463, -85)
+rotation = -0.117034
+script = ExtResource("2_wijl4")
+
+[node name="spawn_2_3" type="Marker2D" parent="."]
+position = Vector2(463, -85)
+rotation = 0.116937
+script = ExtResource("2_wijl4")
+
+[node name="spawn_2_1" type="Marker2D" parent="."]
+position = Vector2(223, -85)
+rotation = 0.116937
+script = ExtResource("2_wijl4")
+flipped = true
