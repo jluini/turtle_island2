@@ -27,6 +27,8 @@ enum State {
 @export var peers : Array = []
 
 func _ready() -> void:
+	get_window().position = Vector2.ZERO
+	
 	set_state(State.INITIAL)
 	multiplayer.peer_connected.connect(_on_peer_connected)
 	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
