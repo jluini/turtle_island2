@@ -1,16 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfxb20ew8up1x"]
+[gd_scene load_steps=5 format=3 uid="uid://cfxb20ew8up1x"]
 
 [ext_resource type="PackedScene" uid="uid://cw0wy7m4c8bxb" path="res://map.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://bosaanvyyog0g" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://ckyesfuoupxu1" path="res://turtle.tscn" id="3_feb5d"]
-[ext_resource type="PackedScene" uid="uid://d2iuarlp3jeld" path="res://stone.tscn" id="4_7jktm"]
 [ext_resource type="Script" uid="uid://cvnd7kyoxmff4" path="res://turtle_spawner.gd" id="4_fc0e3"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_e2o6t")
 map = ExtResource("1_80nbo")
 character = ExtResource("3_feb5d")
-stone = ExtResource("4_7jktm")
 
 [node name="simulation" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -42,10 +40,9 @@ scale = Vector2(1.61, 1.61)
 text = "--"
 
 [node name="turtle_spawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("uid://cw0wy7m4c8bxb", "uid://ckyesfuoupxu1", "uid://d2iuarlp3jeld")
+_spawnable_scenes = PackedStringArray("uid://cw0wy7m4c8bxb", "uid://ckyesfuoupxu1")
 spawn_path = NodePath("../simulation")
 script = ExtResource("4_fc0e3")
-character = ExtResource("3_feb5d")
 
 [connection signal="despawned" from="turtle_spawner" to="." method="_on_turtle_spawner_despawned"]
 [connection signal="spawned" from="turtle_spawner" to="." method="_on_multiplayer_spawner_spawned"]

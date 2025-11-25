@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2iuarlp3jeld"]
+[gd_scene load_steps=5 format=3 uid="uid://d2iuarlp3jeld"]
 
 [ext_resource type="Texture2D" uid="uid://c2ldl0yhhktf2" path="res://icon.svg" id="1_6s6ed"]
+[ext_resource type="Script" uid="uid://x6nxd025wd2l" path="res://dynamic_body.gd" id="1_rq0vd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wijl4"]
 
-[node name="stone" type="RigidBody2D"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_6s6ed"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 0
+properties/1/path = NodePath(".:synced_transform")
+properties/1/spawn = false
+properties/1/replication_mode = 1
+
+[node name="stone" type="RigidBody2D" groups=["dynamic_object"]]
+script = ExtResource("1_rq0vd")
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wijl4")
@@ -30,3 +40,6 @@ texture = ExtResource("1_6s6ed")
 [node name="sprite_2d" type="Sprite2D" parent="."]
 scale = Vector2(0.16, 0.16)
 texture = ExtResource("1_6s6ed")
+
+[node name="multiplayer_synchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_6s6ed")

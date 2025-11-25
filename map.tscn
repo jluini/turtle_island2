@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bcwilt4km1v8q" path="res://turtle/Background Island Def1.png" id="1_urblq"]
 [ext_resource type="PackedScene" uid="uid://coj6as6p4ue2u" path="res://rectangle.tscn" id="1_wijl4"]
 [ext_resource type="Script" uid="uid://dikwacsyfj3o8" path="res://spawn_point.gd" id="2_wijl4"]
-[ext_resource type="PackedScene" uid="uid://d2iuarlp3jeld" path="res://stone.tscn" id="3_e0an3"]
+[ext_resource type="PackedScene" uid="uid://c4jgm0qcg8kac" path="res://deadzone.tscn" id="4_p5pve"]
 
 [node name="map" type="Node2D"]
 
@@ -11,12 +11,6 @@
 modulate = Color(0.454902, 0.454902, 0.454902, 0.552941)
 position = Vector2(0, -241)
 texture = ExtResource("1_urblq")
-
-[node name="stone" parent="." instance=ExtResource("3_e0an3")]
-position = Vector2(0, -450)
-
-[node name="stone2" parent="." instance=ExtResource("3_e0an3")]
-position = Vector2(-231, -168)
 
 [node name="rock" parent="." instance=ExtResource("1_wijl4")]
 position = Vector2(0, -173.775)
@@ -66,3 +60,11 @@ rotation = 0.116937
 script = ExtResource("2_wijl4")
 player = 2
 flipped = true
+
+[node name="deadzone_left" parent="." instance=ExtResource("4_p5pve")]
+position = Vector2(-709, -203)
+scale = Vector2(20.9073, 25.1011)
+
+[node name="deadzone_right" parent="." instance=ExtResource("4_p5pve")]
+position = Vector2(709, -203)
+scale = Vector2(20.9073, 25.1011)
